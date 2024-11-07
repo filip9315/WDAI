@@ -1,0 +1,55 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="../base.css">
+        <link rel="stylesheet" href="contactStyle.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Inria+Sans:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    </head>
+
+    <body class="inter-font">
+
+        <nav>
+            <div class="logoContainer">
+                <a href="../index.html" class="logo">Kolej w Polsce</a>
+            </div>
+            
+            <div class="navLinks">
+                <a href="../index.html" class="navButton">Home</a>
+                <a href="../stock/stock.html" class="navButton">Tabor</a>
+                <a href="../history/history.html" class="navButton">Historia</a>
+                <a href="../contact/contact.html" class="navButton">Kontakt</a>
+            </div>
+            <div class="placeholderNav"></div>
+            
+        </nav>
+
+        <div class="pageContent">
+            <h1>Problem? Napisz do nas!</h1>
+            <div class="myForm">
+                <form>
+                    <label for="email">Email:</label>
+                    <input type="text" id="email" placeholder="Twój email"><br><br>
+
+                    <label>Wybierz temat wiadomości:</label>
+                    <input type="radio" name="topic" id="question">
+                    <label for="question">Pytanie</label>
+                    <input type="radio" name="topic" id="complaint">
+                    <label for="complaint">Skarga</label>
+                    <input type="radio" name="topic" id="other">
+                    <label for="other">Inny</label><br><br>
+
+                    <textarea name="message" id="message" placeholder="Twoja wiadomość" rows="20" cols="40"></textarea><br><br>
+
+                    <button>Wyślij</button>
+                </form>
+            </div>
+        </div>
+        
+        <div class="myFooter">
+            <footer>Filip Wolski</footer>
+        </div>
+        
+    </body>
+</html>

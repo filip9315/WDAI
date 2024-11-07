@@ -1,0 +1,169 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+h2 {
+    font-family: "Inria Sans", sans-serif;
+    font-weight: lighter;
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.pageContent {
+    padding-left: 200px;
+    padding-right: 200px;
+    flex: 1 0 auto;
+}
+
+.inter-font {
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: normal;
+    font-style: normal;
+}
+
+nav {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    padding: 20px 60px;
+    margin-bottom: 80px;
+    margin-top: 20px;
+}
+
+
+.logoContainer {
+    flex: 1;
+    min-width: fit-content;
+    white-space: nowrap;
+}
+
+.navLinks {
+    display: flex;
+    flex: 1;
+    gap: 10px;
+    background-color: black;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+
+.placeholderNav{
+    flex: 1;
+    background-color: blueviolet;
+}
+
+.logo {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    font-size: 32px;
+    font-family: "Inria Sans", sans-serif;
+}
+
+.navButton {
+    background-color: transparent;
+    padding: 15px;
+    border-radius: 3px;
+    text-decoration: none;
+    height: 30px;
+    width: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+.navButton:hover {
+    background-color: white;
+    color: black;
+}
+
+
+.myFooter {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    margin-top: 50px;
+    margin-bottom: 10px;
+    flex-shrink: 0;
+    padding: 1rem;
+    text-align: center;
+}
+
+/* Media queries for responsiveness */
+@media (max-width: 1200px) {
+    .pageContent {
+        padding-left: 100px;
+        padding-right: 100px;
+    }
+}
+
+/* New medium-size layout to prevent overlapping */
+@media (max-width: 1024px) {
+    nav {
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+        gap: 20px;
+    }
+
+    .logo {
+        align-self: center; /* Center logo above nav */
+    }
+
+    .navLinks {
+        position: static; /* Remove absolute positioning */
+        transform: none;
+        width: auto; /* Allow natural width */
+    }
+}
+
+@media (max-width: 768px) {
+    .pageContent {
+        padding-left: 50px;
+        padding-right: 50px;
+    }
+
+    .navLinks {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .navButton {
+        width: 100%;
+    }
+
+    .logo {
+        font-size: 28px;
+    }
+}
+
+@media (max-width: 480px) {
+    .pageContent {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    h2 {
+        font-size: 28px;
+    }
+
+    .logo {
+        font-size: 24px;
+    }
+}

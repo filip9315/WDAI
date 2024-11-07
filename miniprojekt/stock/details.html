@@ -1,0 +1,93 @@
+<html>
+
+    <head>
+        <link rel="stylesheet" href="../base.css">
+        <link rel="stylesheet" href="stockStyle.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Inria+Sans:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=arrow_forward_ios" />
+    </head>
+
+    <body class="inter-font">
+
+        <div class="detailsPage">
+            <a class="backButton" href="stock.html"><- Powrót</a>
+            <div style="height: 100px;"></div>
+            <div class="row">
+
+                <div class="column">
+                    <div class="mainPhoto"><img id="image"></div>
+                    <div style="height: 40px;"></div>
+                    <iframe width="600" height="400" 
+                        src="https://www.youtube.com/embed/jy7LSfvYF4Q" 
+                        title="YouTube video player" 
+                        frameborder="0" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                        allowfullscreen>
+                    </iframe>
+                </div>
+                <div style="width: 80px;"></div>
+                <div class="column">
+                    <h1 id="nazwa">Pendolino</h1>
+                    <div class="detailsRow">
+                        <div class="column">
+                          <h5>Lata eksploatacji: <span id="lataEksploatacji" class="info"></span></h5>
+                          <h5>Producent: <span id="producent" class="info"></span></h5>
+                        </div>
+                        <div style="width: 20px;"></div>
+                        <div class="column">
+                          <h5>Prędkość maksymalna: <span id="predkoscMaksymalna" class="info"></span></h5>
+                          <h5>Moc: <span id="moc" class="info"></span></h5>
+                        </div>
+                      </div>
+                    <div style="height: 40px;"></div>
+                    <h3>Opis</h3>
+                    <div class="opisBox">
+                        <p id="opis"></p>
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+        <div class="myFooter">
+            <footer>Filip Wolski</footer>
+        </div>
+
+        <script>
+
+            function getUrlParameter(name) {
+                const urlParams = new URLSearchParams(window.location.search);
+                return urlParams.get(name);
+            }
+
+            async function loadDetails() {
+                const fileName = getUrlParameter('train');
+                if (!fileName) {
+                    console.error("No file specified in the URL");
+                    return;
+                }
+
+                const response = await fetch('../data/' + fileName + '.json');
+                const data = await response.json();
+            
+                document.getElementById('lataEksploatacji').textContent = data.lataEksploatacji;
+                document.getElementById('producent').textContent = data.producent;
+                document.getElementById('predkoscMaksymalna').textContent = data.predkoscMaksymalna;
+                document.getElementById('moc').textContent = data.moc;
+                document.getElementById('nazwa').textContent = data.nazwa;
+                document.getElementById('image').src = "../photos/" + data.nazwa + ".jpg";
+                document.getElementById('opis').textContent = data.opis;
+            }
+
+        
+            loadDetails();
+          </script>
+    </body>
+
+</html>
