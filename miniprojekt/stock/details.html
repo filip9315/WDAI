@@ -20,7 +20,7 @@
                 <div class="column">
                     <div class="mainPhoto"><img id="image"></div>
                     <div style="height: 40px;"></div>
-                    <iframe width="600" height="400" 
+                    <iframe width="600" height="400" id="film"
                         src="https://www.youtube.com/embed/jy7LSfvYF4Q" 
                         title="YouTube video player" 
                         frameborder="0" 
@@ -30,7 +30,7 @@
                 </div>
                 <div style="width: 80px;"></div>
                 <div class="column">
-                    <h1 id="nazwa">Pendolino</h1>
+                    <h1 id="nazwa"></h1>
                     <div class="detailsRow">
                         <div class="column">
                           <h5>Lata eksploatacji: <span id="lataEksploatacji" class="info"></span></h5>
@@ -83,10 +83,15 @@
                 document.getElementById('nazwa').textContent = data.nazwa;
                 document.getElementById('image').src = "../photos/" + data.nazwa + ".jpg";
                 document.getElementById('opis').textContent = data.opis;
-            }
 
+                if (data.nazwa != 'Pendolino') {
+                    document.getElementById("film").classList.toggle('hidden');
+                }   
+            }
         
             loadDetails();
+
+            
           </script>
     </body>
 

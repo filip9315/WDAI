@@ -6,6 +6,27 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Inria+Sans:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    
+    
+        <script>
+            function validateForm(){
+                if (document.forms["myForm"]["email"].value == ""){ 
+                    alert("Wpisz email");
+                    return false;
+                } 
+
+                if (document.forms["myForm"]["topic"].value == ""){
+                    alert("Wybierz temat");
+                    return false;
+                } 
+
+                if (document.forms["myForm"]["message"].value == ""){
+                    alert("Wpisz wiadomość");
+                    return false;
+                } 
+            }
+        </script>
+    
     </head>
 
     <body class="inter-font">
@@ -28,9 +49,9 @@
         <div class="pageContent">
             <h1>Problem? Napisz do nas!</h1>
             <div class="myForm">
-                <form>
+                <form onsubmit="return validateForm()" name="myForm">
                     <label for="email">Email:</label>
-                    <input type="text" id="email" placeholder="Twój email"><br><br>
+                    <input type="text" id="email" placeholder="Twój email" name="email"><br><br>
 
                     <label>Wybierz temat wiadomości:</label>
                     <input type="radio" name="topic" id="question">
@@ -42,7 +63,7 @@
 
                     <textarea name="message" id="message" placeholder="Twoja wiadomość" rows="20" cols="40"></textarea><br><br>
 
-                    <button>Wyślij</button>
+                    <input type="submit" value="Wyślij">
                 </form>
             </div>
         </div>
@@ -51,5 +72,7 @@
             <footer>Filip Wolski</footer>
         </div>
         
+        
+
     </body>
 </html>
