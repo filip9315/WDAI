@@ -72,6 +72,7 @@ nav {
     font-weight: bold;
     font-size: 32px;
     font-family: "Inria Sans", sans-serif;
+    margin-right: 20px;
 }
 
 .navButton {
@@ -105,14 +106,6 @@ nav {
 }
 
 
-@media (max-width: 1200px) {
-    .pageContent {
-        padding-left: 100px;
-        padding-right: 100px;
-    }
-}
-
-
 @media (max-width: 1024px) {
     nav {
         flex-direction: column;
@@ -123,6 +116,10 @@ nav {
 
     .logo {
         align-self: center;
+    }
+
+    .navButton {
+        height: 40px;
     }
 
     .navLinks {
@@ -149,20 +146,5 @@ nav {
 
     .logo {
         font-size: 28px;
-    }
-}
-
-@media (max-width: 480px) {
-    .pageContent {
-        padding-left: 20px;
-        padding-right: 20px;
-    }
-
-    h2 {
-        font-size: 28px;
-    }
-
-    .logo {
-        font-size: 24px;
     }
 }
