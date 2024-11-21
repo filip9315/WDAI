@@ -1,0 +1,34 @@
+<html>
+  <head>
+    <style>
+      td, thead{
+        border: 1px solid black;
+      }
+    </style>
+  </head>
+    <body>
+        <div id="filters">
+          <input type="text" id="searchInput" placeholder="Wyszukaj produkt..." oninput="filterData()">
+          <select id="sortSelect" onchange="sortData()">
+            <option value="original">Oryginalna kolejność</option>
+            <option value="asc">Rosnąco</option>
+            <option value="desc">Malejąco</option>
+          </select>
+        </div>
+        <br><br>
+        <table id="productTable" style="border-collapse: collapse">
+          <thead>
+            <tr>
+              <th>Zdjęcie</th>
+              <th>Tytuł</th>
+              <th>Opis</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Wiersze danych będą dodawane dynamicznie -->
+          </tbody>
+        </table>
+        <script src="main.js">
+        </script>
+    </body>
+</html>

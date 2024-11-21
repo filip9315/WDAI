@@ -118,3 +118,32 @@ p {
 .hidden {
     display: none;
 }
+
+
+@media (max-width: 768px) {
+    .row{
+        flex-direction: column;
+    }
+
+    .mainPhoto img{
+        width: 50%;
+        height: 50%;
+    }
+
+    .detailsPage {
+        margin-top: 40px;
+        margin-left: 30px;
+        margin-right: 30px;
+        flex: 1 0 auto;
+    }
+
+    iframe {
+        height: 200px;
+        width: 400px;
+    }
+
+    .opisBox {
+        width: 100%;
+    }
+    
+}
