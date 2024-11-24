@@ -1,5 +1,9 @@
+window.onload = function () {
+
 const canvas = document.getElementById('canvas');
 const ctx = canvas.getContext('2d');
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
 
 const sadMusic = new Audio('sad-music.mp3');
 
@@ -17,8 +21,8 @@ const emptyHeart = new Image();
 fullHeart.src = 'full_heart.png';
 emptyHeart.src = 'empty_heart.png';
 
-const canvasWidth = 1680;
-const canvasHeight = 1050;
+const canvasWidth = canvas.width;
+const canvasHeight = canvas.height;
 const zombieFrameWidth = 200;
 const zombieFrameHeight = 312;
 const zombieFrames = 10;
@@ -51,17 +55,17 @@ function createZombie() {
 function drawLives() {
   for (let i = 1; i <= 3; i++) {
     if(i > lives){
-        ctx.drawImage(emptyHeart, 20 + i * 60, 10, 40, 40);
+        ctx.drawImage(emptyHeart, 20 + i * 60, 40, 40, 40);
     } else{
-        ctx.drawImage(fullHeart, 20 + i * 60, 10, 40, 40);
+        ctx.drawImage(fullHeart, 20 + i * 60, 40, 40, 40);
     }
   }
 }
 
 function drawScore() {
   ctx.fillStyle = 'white';
-  ctx.font = '50px';
-  ctx.fillText(`Wynik: ${score}`, canvasWidth - 120, 30);
+  ctx.font = '30px Arial';
+  ctx.fillText(`Wynik: ${score}`, canvasWidth - 200, 50);
 }
 
 function drawZombies() {
@@ -120,9 +124,10 @@ function handleShot(x, y) {
 }
 
 function drawGame() {
+    //document.body.style.cursor = 'none';
     ctx.drawImage(backgroundImage, 0, 0, canvasWidth, canvasHeight);
     drawZombies();
-    ctx.drawImage(cursorImage, cursorX - 25, cursorY - 25, 50, 50);
+    ctx.drawImage(cursorImage, cursorX - 50, cursorY - 50, 100, 100);
     drawLives();
     drawScore();
 }
@@ -146,6 +151,7 @@ function updateGame(timestamp) {
 function endGame() {
   document.getElementById('game-over').style.display = 'block';
   document.getElementById('final-score').textContent = score;
+  document.body.style.cursor = 'default';
   sadMusic.play();
 }
 
@@ -177,3 +183,4 @@ backgroundImage.onload = () => {
     };
   };
 };
+}

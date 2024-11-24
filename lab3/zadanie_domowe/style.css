@@ -3,28 +3,29 @@ body {
     overflow: hidden;
     font-family: Arial, sans-serif;
   }
-  canvas {
-    display: block;
-    cursor: none;
-  }
-  #game-over {
-    display: none;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-    background: rgba(0, 0, 0, 0.8);
-    color: white;
-    padding: 20px;
-    border-radius: 10px;
-  }
-  #restart-btn {
-    margin-top: 20px;
-    padding: 10px 20px;
-    background-color: red;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-  }
+
+canvas {
+  display: block;
+  cursor: none;
+}
+#game-over {
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  background: black;
+  color: white;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+#restart-btn {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: red;
+  color: white;
+  border: none;
+  border-radius: 5px;
+}
