@@ -1,2 +1,3 @@
 *.zip
 .DS_Store
+/lab4/zad/node_modules/
