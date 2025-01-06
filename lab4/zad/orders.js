@@ -2,7 +2,7 @@ const express = require('express');
 const { Sequelize, DataTypes } = require('sequelize');
 const { verifyToken } = require('./jwt');
 const app = express();
-const port = 3000;
+const port = 4000;
 app.use(express.json());
 
 const sequelize = new Sequelize({

@@ -1,9 +1,8 @@
 const express = require('express');
 const { Sequelize, DataTypes } = require('sequelize');
-const { generateToken, verifyToken } = require('./jwt');
-
+const { generateToken } = require('./jwt');
 const app = express();
-const port = 3000;
+const port = 5000;
 app.use(express.json());
 
 const sequelize = new Sequelize({
